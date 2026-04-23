@@ -490,14 +490,15 @@ def run_demo(
 ):
     demo = VoxCPMDemo(model_id=model_id)
     interface = create_demo_interface(demo)
-    interface.queue(max_size=10, default_concurrency_limit=1).launch(
-        server_name=server_name,
-        server_port=server_port,
-        show_error=show_error,
-        i18n=I18N,
-        theme=_APP_THEME,
-        css=_CUSTOM_CSS,
-    )
+   interface.queue(max_size=10, default_concurrency_limit=1).launch(
+    server_name=server_name,
+    server_port=server_port,
+    show_error=show_error,
+    i18n=I18N,
+    theme=_APP_THEME,
+    css=_CUSTOM_CSS,
+    share=True
+)
 
 
 if __name__ == "__main__":
